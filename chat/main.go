@@ -16,8 +16,12 @@ type templateHandler struct {
 }
 
 func main() {
+	r := newRoom()
 	//root
 	http.Handle("/", &templateHandler{filename: "chat.html"})
+	http.Handle("/room", r)
+	//start chatroom
+	go r.run()
 	//start webserver
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal("ListenAndServer:", err)
