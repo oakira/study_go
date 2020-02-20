@@ -9,6 +9,7 @@
 		input {
 			display: block;
 		}
+
 		ul {
 			list-style: none;
 		}
@@ -41,7 +42,7 @@
 			if (!window['WebSocket']) {
 				alert('error:Don\'t use WebSocket Browsers');
 			} else {
-				socket = new WebSocket("ws://localhost:8080/room");
+				socket = new WebSocket("ws://{{.HOST}}room");
 				socket.onclose = function () {
 					alert('connect finish');
 				}
