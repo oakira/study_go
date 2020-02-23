@@ -1,2 +1,2 @@
-# study_golang
-golang勉強用
+# study_go
+go勉強用
